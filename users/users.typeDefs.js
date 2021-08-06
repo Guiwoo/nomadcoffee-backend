@@ -10,7 +10,4 @@ export default gql`
     avatarURL: String
     githubUsername: String
   }
-  type Query {
-    _dummy: String
-  }
 `;
