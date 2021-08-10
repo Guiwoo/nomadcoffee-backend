@@ -13,5 +13,6 @@ export default gql`
     followers: [User]
     totalFollowers: Int!
     totalFollowings: Int!
+    coffeeShops: [CoffeeShop]
   }
 `;
