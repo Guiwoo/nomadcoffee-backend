@@ -23,11 +23,10 @@ export default {
             },
           },
         });
-        console.log(oldShop);
         if (!oldShop) {
           return {
             ok: false,
-            error: "YOu can not edit this photo",
+            error: "YOu can not edit this shop",
           };
         }
         const exist = await client.coffeeShop.findFirst({

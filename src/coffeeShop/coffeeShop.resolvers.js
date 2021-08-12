@@ -13,6 +13,10 @@ export default {
           },
         },
       }),
+    photos: ({ id }, { page }) =>
+      client.coffeeShop
+        .findUnique({ where: { id } })
+        .CoffeeShopPhoto({ tkae: 3, skip: (page - 1) * 3 }),
   },
   Category: {
     coffeeShops: ({ id }) =>

@@ -7,8 +7,8 @@ export default gql`
     latitude: String!
     longitude: String!
     user: User!
-    categories: [Category]
-    photos: [CoffeeShopPhoto]
+    categories(page: Int): [Category]
+    photos(page: Int): [CoffeeShopPhoto]
   }
   type Category {
     id: Int!
