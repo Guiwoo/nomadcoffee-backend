@@ -5,6 +5,7 @@ export default gql`
     createCoffeeShop(
       name: String!
       latitude: String!
+      file: Upload!
       longitude: String!
       categoryItem: String
     ): MutationResult!

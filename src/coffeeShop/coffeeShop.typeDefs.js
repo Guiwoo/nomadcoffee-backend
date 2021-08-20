@@ -4,6 +4,7 @@ export default gql`
   type CoffeeShop {
     id: Int!
     name: String!
+    file: String!
     latitude: String!
     longitude: String!
     user: User!
