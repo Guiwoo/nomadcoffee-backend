@@ -51,11 +51,10 @@ export default {
           return {
             ok: true,
           };
-        } catch (e) {
-          console.log(e);
+        } catch (error) {
           return {
             ok: false,
-            error: "Can't make Coffee Shop!",
+            error,
           };
         }
       }
