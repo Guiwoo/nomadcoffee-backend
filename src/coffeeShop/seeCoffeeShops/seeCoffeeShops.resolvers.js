@@ -4,8 +4,8 @@ export default {
   Query: {
     seeCoffeeShops: (_, { page }) =>
       client.coffeeShop.findMany({
-        skip: (page - 1) * 4,
-        take: 4,
+        skip: page,
+        take: 2,
         orderBy: {
           id: "desc",
         },
