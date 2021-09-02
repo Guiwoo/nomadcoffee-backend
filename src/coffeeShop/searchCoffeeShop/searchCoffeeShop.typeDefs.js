@@ -2,9 +2,7 @@ import { gql } from "apollo-server-core";
 
 export default gql`
   type TheResult {
-    CoffeeShop: [CoffeeShop]
-    Category: [Category]
-    type: String!
+    CoffeeShop: [CoffeeShop]!
     error: String
   }
   type Query {

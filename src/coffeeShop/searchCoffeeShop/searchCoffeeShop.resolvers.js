@@ -6,16 +6,20 @@ export default {
       const theShop = await client.coffeeShop.findMany({
         where: {
           name: {
-            contains: keyword.toLowerCase(),
+            contains: keyword,
           },
         },
         take: 4,
         skip: (page - 1) * 4,
       });
-      const theCategory = await client.category.findMany({
+      const theCategory = await client.coffeeShop.findMany({
         where: {
-          name: {
-            contains: keyword.toLowerCase(),
+          categories: {
+            some: {
+              name: {
+                contains: keyword,
+              },
+            },
           },
         },
         take: 4,
@@ -23,22 +27,13 @@ export default {
       });
       if (theShop.length === 0 && theCategory.length === 0) {
         return {
-          CoffeeShop: theShop,
-          type: "None",
-          error: "Can't find anythings !",
+          CoffeeShop: [...theShop, ...theCategory],
+          error: "Can not find anythins!",
         };
       }
-      if (theShop.length > 0) {
-        return {
-          CoffeeShop: theShop,
-          type: "shop",
-        };
-      } else {
-        return {
-          Category: theCategory,
-          type: "category",
-        };
-      }
+      return {
+        CoffeeShop: [...theShop, ...theCategory],
+      };
     },
   },
 };

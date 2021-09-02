@@ -20,9 +20,9 @@ export default {
   },
   Category: {
     coffeeShops: ({ id }) =>
-      client.category.findMany({
+      client.coffeeShop.findMany({
         where: {
-          coffeeShops: {
+          categories: {
             some: {
               id,
             },
